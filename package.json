@@ -1,0 +1,15 @@
+{
+    "name": "node-typescript",
+    "version": "1.0.0",
+    "description": "A starter template for a Node.js project with Typescript",
+    "main": "dist/index.js",
+    "author": "vafdaf12",
+    "license": "MIT",
+    "devDependencies": {
+        "esbuild": "^0.17.0"
+    },
+    "scripts": {
+        "build": "esbuild src/index.ts --bundle --platform=node --outdir=dist",
+        "start": "yarn build && node ."
+    }
+}
