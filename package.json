@@ -6,10 +6,14 @@
     "author": "vafdaf12",
     "license": "MIT",
     "devDependencies": {
+        "@types/prompts": "^2.4.2",
         "esbuild": "^0.17.0"
     },
     "scripts": {
         "build": "esbuild src/index.ts --bundle --platform=node --outdir=dist",
         "start": "yarn build && node ."
+    },
+    "dependencies": {
+        "prompts": "^2.4.2"
     }
 }
