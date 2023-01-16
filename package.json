@@ -1,7 +1,7 @@
 {
-    "name": "node-typescript",
+    "name": "mc-server-creator",
     "version": "1.0.0",
-    "description": "A starter template for a Node.js project with Typescript",
+    "description": "A command-line tool for creating and managing Minecraft servers",
     "main": "dist/index.js",
     "author": "vafdaf12",
     "license": "MIT",
