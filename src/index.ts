@@ -44,7 +44,7 @@ async function downloadFile(url: string, path: fs.PathLike, downloadLabel: strin
 }
 
 async function main() {
-    await VersionManifest.fetchAll();
+    VersionManifest.fetchAll();
 
     const response = await prompts([
         {
