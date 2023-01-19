@@ -1,6 +1,12 @@
 import fs from "fs";
 
 /**
+ * A convenience method for creating a new file, with no contents
+ * @param file The path to the file
+ */
+export const createFile = async (file: fs.PathOrFileDescriptor) => writeFile(file, "");
+
+/**
  * Promise-based alternative to {@link fs.writeFile }
  * 
  * @param path A path to a file. If a URL is provided, it must use the
