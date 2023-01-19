@@ -10,6 +10,7 @@ import format from "./util/format";
 import fs from "fs";
 import got from "got";
 import { pipeline } from "stream/promises";
+import isValid from "is-valid-path";
 
 const TEMPLATES: Choice[] = ["vanilla", "fabric"].map(choiceFromValue);
 
@@ -51,7 +52,8 @@ async function main() {
             type: "text",
             name: "title",
             message: "Server Name",
-            initial: "Minecraft Server"
+            initial: "Minecraft Server",
+            validate: (value: string) => isValid(value) ? true : "Invalid server name"
         },
         {
             type: "select",
