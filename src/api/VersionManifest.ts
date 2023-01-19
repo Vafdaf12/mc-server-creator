@@ -1,6 +1,6 @@
 import got from "got";
 
-const URL_MANIFEST = "https://launchermeta.mojang.com/mc/game/version_manifest.json";
+import { URL_MANIFEST } from "../util/constants";
 
 import {
     MCVersionSummary,
