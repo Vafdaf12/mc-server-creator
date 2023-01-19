@@ -1,35 +1,4 @@
-import got from "got";
 import { exec } from "child_process";
-import { Installer, OpenJDK } from "../types/OpenJDK";
-
-const URL_OPENJDK = "https://api.adoptium.net/v3/assets/latest/"
-const javaURL = (version: number) => `${URL_OPENJDK}/${version}/hotspot`;
-
-/**
- * Fetches a download URL for a JRE (if available)
- * for the host system. If a JRE was not found,
- * the equivalent JDK is returned.
- * @param version The required major version of the JRE
- */
-async function fetchDownloadUrl(version: number): Promise<Installer | undefined> {
-
-    let json = {
-        os: process.platform,
-        architecture: process.arch,
-        version: version
-    };
-
-    let url = javaURL(version);
-    let data: OpenJDK[] = await got(url, { searchParams: json }).json();
-
-    let jre =
-        data.find(v => v.binary.image_type == "jre") ||
-        data.find(v => v.binary.image_type == "jdk"); // Fallback if JRE only is not found
-
-    if (!jre) return;
-
-    return jre.binary.package;
-}
 
 /**
  * Finds the verion of java as
@@ -76,6 +45,5 @@ async function javaVersionMajor(): Promise<number> {
 }
 
 export default {
-    javaVersionMajor,
-    fetchDownloadUrl
+    javaVersionMajor
 }
