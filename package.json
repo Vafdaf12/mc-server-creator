@@ -6,7 +6,7 @@
     "author": "vafdaf12",
     "license": "MIT",
     "scripts": {
-        "build": "esbuild src/index.ts --bundle --platform=node --outdir=dist",
+        "build": "esbuild src/index.ts --bundle --minify --platform=node --outdir=dist",
         "start": "yarn build && node ."
     },
     "dependencies": {
