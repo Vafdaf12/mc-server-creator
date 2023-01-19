@@ -1,5 +1,5 @@
 
-export interface OpenJDK {
+export interface Adoptium {
     binary: Binary;
     release_link: string;
     release_name: string;
